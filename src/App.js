@@ -1,22 +1,22 @@
-import "./App.css";
 import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+
+import "./App.css";
 import Tasks from "./components/views/Tasks/Tasks";
 import Login from "./components/views/auth/Login/Login";
 import Register from "./components/views/auth/Register/Register";
 import { Donate } from "./components/views/Donate/Donate"
-import { AnimatePresence, motion } from "framer-motion";
 import Registered from "./components/views/Registered/Registered";
 
 const Error404 = lazy(() => import("./components/views/Error404/Error404"));
 
-const RequiredAuth = ({ children }) => {
+const RequireAuth = ({ children }) => {
   if (!localStorage.getItem("token")) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/login" replace={true} />
   }
-
-  return children;
-};
+  return children
+}
 
 const pageTransition = {
   in: {
@@ -43,9 +43,9 @@ const App = () => {
               exit="out"
               variants={pageTransition}
             >
-              <RequiredAuth>
+              <RequireAuth>
                 <Tasks />
-              </RequiredAuth>
+              </RequireAuth>
             </motion.div>
           }
         />
@@ -94,7 +94,7 @@ const App = () => {
         <Route
           path="/donate"
           element={
-            <RequiredAuth>
+            <RequireAuth>
               <motion.div
                 className="page"
                 initial="out"
@@ -104,7 +104,7 @@ const App = () => {
               >
                 <Donate />
               </motion.div>
-            </RequiredAuth>
+            </RequireAuth>
           }
         />
         <Route

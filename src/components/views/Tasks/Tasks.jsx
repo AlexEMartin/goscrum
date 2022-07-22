@@ -69,8 +69,6 @@ const Tasks = () => {
     }
   };
 
-  const istoken = localStorage.getItem("token");
-
   const handleSearch = debounce((event) => {
     setSearch(event?.target?.value);
   }, 1000);
@@ -81,7 +79,6 @@ const Tasks = () => {
 
   return (
     <>
-      {!istoken && navigate("/login")}
       <div>
         <Header />
         <main className="flex" id="tasks">

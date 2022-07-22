@@ -13,7 +13,7 @@ const Register = () => {
     fetch("https://goscrum-api.alkemy.org/auth/data")
       .then((response) => response.json())
       .then((data) => setData(data.result));
-  }, []);
+  }, [data]);
 
   const initialValues = {
     userName: "",
