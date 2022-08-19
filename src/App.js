@@ -56,7 +56,7 @@ const App = () => {
               className="page"
               initial="out"
               animate="in"
-              exit="out"
+              // exit="out"
               variants={pageTransition}
             >
               <Login />

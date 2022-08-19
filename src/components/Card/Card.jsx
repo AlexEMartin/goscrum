@@ -35,7 +35,7 @@ const Card = ({
       </div>
       <h6 className="mt-2 text-sm">{datetime}</h6>
       <h5 className="mt-2 font-semibold">{userName}</h5>
-      <div className="mt-2">
+      <div className="mt-2 mb-4">
         <button
           onClick={() => {
             editCardStatus(data);

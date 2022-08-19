@@ -81,9 +81,9 @@ const Tasks = () => {
     <>
       <div>
         <Header />
-        <main className="flex" id="tasks">
+        <main className="flex flex-wrap" id="tasks">
           <TaskForm />
-          <section className="ml-52">
+          <section className="lg:ml-52 md:ml-32 sm:ml-16">
             <div>
               <h2 className="font-bold ml-14 mt-12">MIS TAREAS</h2>
             </div>
@@ -134,9 +134,9 @@ const Tasks = () => {
                   <div className='ml-12 mt-6 text-red-400'>No hay tareas realizadas</div>
                 ) : loading ? (
                   <div className='ml-12 mt-8'>
-                    <Skeleton width={300} height={150} />
-                    <Skeleton width={300} height={150} />
-                    <Skeleton width={300} height={150} />
+                    <Skeleton width={300} height={250} />
+                    <Skeleton width={300} height={250} />
+                    <Skeleton width={300} height={250} />
                   </div>
                 ) : (
                   <>{renderCardsData()}</>
