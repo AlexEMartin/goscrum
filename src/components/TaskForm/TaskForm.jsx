@@ -123,7 +123,7 @@ const TaskForm = () => {
             )}
           </div>
           <button
-            className="bg-red-500 p-2 text-white font-bold text-sm rounded-md"
+            className="bg-blue-500 p-2 text-white font-bold text-sm rounded-md"
             type="submit"
           >
             Crear

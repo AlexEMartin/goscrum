@@ -40,11 +40,11 @@ const Card = ({
           onClick={() => {
             editCardStatus(data);
           }}
-          className="bg-red-500 p-2 text-white font-bold text-sm rounded-md"
+          className="bg-blue-500 p-2 text-white font-bold text-sm rounded-md"
         >
           {status.toLowerCase()}
         </button>
-        <button className="ml-2 bg-red-500 p-2 text-white font-bold text-sm rounded-md">
+        <button className="ml-2 bg-blue-500 p-2 text-white font-bold text-sm rounded-md">
           {importance.toLowerCase()}
         </button>
       </div>
